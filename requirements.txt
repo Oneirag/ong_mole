@@ -1,0 +1,9 @@
+pandas
+requests
+websocket-client                # For opening websockets with mole server
+loguru
+ong_utils >= 0.5.3
+ong_utils[selenium]             # Includes selenium
+ong_utils[jwt]
+selenium                        # Is included in ong_utils[selenium] but prevents editor from complaining....
+xlrd                            # For reading xls created by mole

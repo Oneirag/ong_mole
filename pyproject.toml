@@ -1,0 +1,28 @@
+[project]
+name = "ong_mole"
+version = "0.0.1"
+# license = {file = "LICENSE.txt"}
+authors = [
+    { email = "oneirag@yahoo.es", name = "Oscar Neira" }
+]
+readme = "README.md"
+requires-python = ">=3.8"
+description = "Utility to download price data from mole"
+
+dynamic = ["dependencies"]
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+
+[tool.setuptools.packages.find]
+# scanning for namespace packages is true by default in pyproject.toml, so
+# you do NOT need to include the following line.
+namespaces = true
+where = ["src"]
+
+[project.urls]  # Optional
+"Homepage" = "https://github.com/Oneirag/ong_mole"
+"Source" = "https://github.com/Oneirag/ong_mole"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
