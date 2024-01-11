@@ -4,7 +4,7 @@ from __future__ import annotations
 import json
 import os
 import re
-import pprint
+from io import BytesIO
 from time import sleep
 from urllib.parse import urlparse
 
@@ -235,7 +235,7 @@ class Mole:
     def download_df(self, set_name: str) -> pd.DataFrame:
         """Gets the response of a set name into a pandas DataFrame. Raises value error if set_name is not found"""
         response = self._download(set_name)
-        df = pd.read_excel(response.content, header=1)
+        df = pd.read_excel(BytesIO(response.content), header=1)
         return df
 
     def download_file(self, set_name: str, path: str = None, filename: str = None) -> str | None:
